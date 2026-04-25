@@ -13,7 +13,7 @@ load_dotenv(BASE_DIR / '.env')
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-local-dev-key-please-change-in-prod')
-GEMINI_API_KEY = os.getenv('GEMINI_API_KEY')
+GEMINI_API_KEY = 'AIzaSyAEWxemrLo_FiMoCEMEe1fO5_U95R9yrrk'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG=True in env → debug mode. Anything else (or missing) → production mode.
