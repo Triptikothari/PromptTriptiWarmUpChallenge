@@ -39,3 +39,9 @@ We will rewrite the `chat_view` logic to do the following:
 ## Verification Plan
 1. We will push the updated models and run migrations (`python manage.py makemigrations` and `migrate`).
 2. We will test the frontend chat: replying "No, I don't understand" 3 times in a row should permanently trigger the "slow learner" profile status in the sidebar.
+
+## Deployment Status (Ready for Cloud)
+- [x] **Backend**: Production `settings.py` configured (Whitenoise, collectstatic, DEBUG=False).
+- [x] **Backend**: `Dockerfile` ready for Google Cloud Run.
+- [x] **Frontend**: Build verified (`npm run build`).
+- [x] **Deployment Guide**: Created detailed walkthrough for final auth-based steps.
