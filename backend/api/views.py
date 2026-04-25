@@ -91,8 +91,8 @@ class ChatView(APIView):
             try:
                 genai.configure(api_key=settings.GEMINI_API_KEY)
                 
-                # Standard model call without experimental tools to resolve 404
-                model = genai.GenerativeModel('gemini-1.5-flash')
+                # Switching to 'gemini-pro' for maximum stability
+                model = genai.GenerativeModel('gemini-pro')
                 
                 response = model.generate_content(system_prompt)
                 ai_content = response.text
