@@ -86,16 +86,13 @@ class ChatView(APIView):
         """
 
         ai_content = ""
-        # Call Gemini API with Google Search Grounding
+        # Call Gemini API
         if settings.GEMINI_API_KEY:
             try:
                 genai.configure(api_key=settings.GEMINI_API_KEY)
                 
-                # Enable Google Search tool for grounded responses
-                model = genai.GenerativeModel(
-                    model_name='gemini-1.5-flash',
-                    tools=[{'google_search_retrieval': {}}]
-                )
+                # Standard model call without experimental tools to resolve 404
+                model = genai.GenerativeModel('gemini-1.5-flash')
                 
                 response = model.generate_content(system_prompt)
                 ai_content = response.text
